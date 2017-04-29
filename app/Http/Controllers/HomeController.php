@@ -6,14 +6,19 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+
+    protected $imgController;
+
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(ImagemController $imgController)
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
+
+        $this->imgController = $imgController;
     }
 
     /**
@@ -23,6 +28,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $model = $this->imgController->listar();        
+        return view('home', compact('model'));
     }
 }
