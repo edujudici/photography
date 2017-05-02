@@ -3,22 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Api\Empresa\EmpresaInterface as Empresa;
 
 class HomeController extends Controller
 {
 
-    protected $imgController;
+    protected $empresaI;
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct(ImagemController $imgController)
+    public function __construct(Empresa $empresa)
     {
         //$this->middleware('auth');
 
-        $this->imgController = $imgController;
+        $this->empresaI = $empresa;
     }
 
     /**
@@ -27,8 +28,8 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $model = $this->imgController->listar();        
+    {       
+        $model = $this->empresaI->getAll();               
         return view('home', compact('model'));
     }
 }

@@ -17,18 +17,18 @@ Route::get('/', function () {
 
 Auth::routes();
 
-// Route::group(['middleware' => 'auth'], function ()
-// {
+Route::group(['middleware' => 'auth'], function ()
+{
 	
 	Route::get('/home', 'HomeController@index');
 
 
-    Route::get ('/listar/{id?}',  ['as' => 'galeria.listar',  'uses' => 'ImagemController@listar']);
-    Route::post('/salvar',  ['as' => 'galeria.salvar',  'uses' => 'ImagemController@salvar']);
-    Route::post('/ordenar',  ['as' => 'galeria.ordenar',  'uses' => 'ImagemController@ordenar']);
-    Route::post('/excluir', ['as' => 'galeria.excluir', 'uses' => 'ImagemController@excluir']);
+    // Route::get ('/listar/{id?}',  ['as' => 'galeria.listar',  'uses' => 'ImagemController@listar']);
+    // Route::post('/salvar',  ['as' => 'galeria.salvar',  'uses' => 'ImagemController@salvar']);
+    // Route::post('/ordenar',  ['as' => 'galeria.ordenar',  'uses' => 'ImagemController@ordenar']);
+    // Route::post('/excluir', ['as' => 'galeria.excluir', 'uses' => 'ImagemController@excluir']);
     
 
-// });
+});
 
 
