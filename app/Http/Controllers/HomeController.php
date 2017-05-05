@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Api\Empresa\EmpresaInterface as Empresa;
+use App\Http\Api\Empresa\EmpresaInterface;
 
 class HomeController extends Controller
 {
@@ -15,7 +15,7 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct(Empresa $empresa)
+    public function __construct(EmpresaInterface $empresa)
     {
         //$this->middleware('auth');
 
