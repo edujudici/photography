@@ -1,6 +1,7 @@
 
 <!-- Styles -->
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+<link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
 
 <!-- Scripts -->
 <script>
@@ -173,9 +174,9 @@
 
     $(document).ready(function(){
         
-        // ko.applyBindings(modalViewM,document.getElementById('koModal'));
-        // ko.applyBindings(globalMsgVm,document.getElementById('koGlobalMsgs'));
-        // ko.applyBindings(confirmModal,document.getElementById('confirmModal'));
+        ko.applyBindings(modalViewM,document.getElementById('koModal'));
+        ko.applyBindings(globalMsgVm,document.getElementById('koGlobalMsgs'));
+        ko.applyBindings(confirmModal,document.getElementById('confirmModal'));
     });
 
 </script>

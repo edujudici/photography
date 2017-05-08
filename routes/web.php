@@ -23,11 +23,10 @@ Route::group(['middleware' => 'auth'], function ()
 	Route::get('/home', 'HomeController@index');
 
 
-    // Route::get ('/listar/{id?}',  ['as' => 'galeria.listar',  'uses' => 'ImagemController@listar']);
-    // Route::post('/salvar',  ['as' => 'galeria.salvar',  'uses' => 'ImagemController@salvar']);
-    // Route::post('/ordenar',  ['as' => 'galeria.ordenar',  'uses' => 'ImagemController@ordenar']);
-    // Route::post('/excluir', ['as' => 'galeria.excluir', 'uses' => 'ImagemController@excluir']);
+    Route::post('/save',  ['as' => 'company.save',  'uses' => 'HomeController@save']);
+    Route::post('/delete',  ['as' => 'company.delete',  'uses' => 'HomeController@delete']);
     
+    // Route::get ('/list/{id?}',  ['as' => 'image.list',  'uses' => 'ImageController@list']);
 
 });
 

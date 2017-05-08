@@ -14,6 +14,11 @@
     
 </head>
 <body>
+
+    <div id="koModal">
+        <div data-bind="visible: modalViewM.showLoading" class="divOfuscada"></div>
+    </div>
+
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
@@ -71,7 +76,40 @@
             </div>
         </nav>
 
-        @yield('content')
+        <div class="container">
+    
+            <div class="small-12 columns" id="koGlobalMsgs">
+                <div class="alert alert-danger" data-bind="visible: globalMsgVm.erros().length != 0" style="display: none">
+                    <!-- ko foreach: globalMsgVm.erros -->
+                    <p style="margin-left:10px;" data-bind="text: $data"></p>
+                    <!-- /ko -->
+                </div>
+                <div class="alert alert-success" id="successDiv" style="display:none">
+                     <p style="margin-left:10px;" ></p>
+                </div>
+            </div>
+
+            <div id="confirmModal" class="modal fade" tabindex="-1" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Confirmar Ação</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p data-bind="text: confirmTitle"></p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" data-bind="click: cancelarButton">Cancelar</button>
+                    <button type="button" class="btn btn-primary" data-bind="click: okButton">Confirmar</button>
+                  </div>
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+
+            @yield('content')
+        </div>
+
     </div>
 
     <!-- Other Scripts -->
