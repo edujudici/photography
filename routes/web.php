@@ -19,14 +19,9 @@ Auth::routes();
 
 Route::group(['middleware' => 'auth'], function ()
 {
-	
-	Route::get('/home', 'HomeController@index');
-
-
-    Route::post('/save',  ['as' => 'company.save',  'uses' => 'HomeController@save']);
-    Route::post('/delete',  ['as' => 'company.delete',  'uses' => 'HomeController@delete']);
     
-    // Route::get ('/list/{id?}',  ['as' => 'image.list',  'uses' => 'ImageController@list']);
+    Route::get('/home', 'ImageController@index');
+    Route::post('/image-save',  ['as' => 'image.save',  'uses' => 'ImageController@save']);
 
 });
 

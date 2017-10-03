@@ -11,6 +11,8 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     @include('layouts.head')
+
+    @yield('custom_styles')
     
 </head>
 <body>
